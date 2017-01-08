@@ -1,0 +1,10 @@
+<table class="table table-striped">
+    <thead class="text-primary">
+        <th *ngFor="let col of columns" class="cabecera"><a (click)="sort(col.valor)">{{col.columna}}</a></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of rows ">
+            <td *ngFor="let col of columns" class="valores">{{row[col.valor] }} </td>
+        </tr>
+    </tbody>
+</table>

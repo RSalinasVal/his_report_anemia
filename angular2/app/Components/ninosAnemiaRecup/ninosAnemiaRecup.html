@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-xs-2" style=" height:100%;  
+    box-shadow: 0 12px 20px -10px rgba(16, 174, 222, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2);
+">
+        <p class="text-center"><strong>Niños con Anemia Recuperados sin Diagnostico Definitivo.</strong></p>
+
+        <br>
+        <p class="text-center text-primary">Años</p>
+        <p class="text-center">
+            <!--<select class="selectpicker" (change)="onChangeAnio($event.target.value)">-->
+            <select (change)="anio=($event.target.value)">
+    <option>2016</option>
+
+  </select>
+        </p>
+        <p class="text-center text-primary">Edad</p>
+        <p class="text-center">
+            <!--<select class="selectpicker" (change)="onChangeMes($event.target.value)">-->
+            <select (change)="edad=($event.target.value)">
+      <option value="101">Menor 1 año</option>
+      <option value="102">Menor 2 años</option>
+      <option value="103">Menor 3 años</option>
+      <option value="104">Menor 4 años</option>
+      <option value="105" selected="selected">Menor 5 años</option>
+     
+    </select>
+        </p>
+
+        <p class="text-center text-primary">Acciones:</p>
+        <p class="text-center">
+            <button class="btn btn-success" (click)="hacerConsulta()">Generar Reporte</button>
+            <br><br>
+            <button class="btn btn-warning" (click)="ExportarXLS()">Exportar a CSV</button>
+
+        </p>
+        <br>
+        <br>
+        <ul>
+            <li role="presentation"><a [routerLink]="['/anemia/recuperados']"> Niños con anemia Recuperados sin Diagnostico Definitivo </a></li>
+            <li role="presentation"><a [routerLink]="['/anemia/diagnosticados_anio_anterior']"> Niños con anemia Diagnosticados [Año anterior] </a></li>
+        </ul>
+    </div>
+
+    <div class="col-xs-10">
+
+        <grid-demo4 [IdReport]="IdMes" [IdAnio]="IdAnio" [exportar]="exportar"></grid-demo4>
+
+    </div>
+
+</div>

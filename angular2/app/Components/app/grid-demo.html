@@ -1,0 +1,17 @@
+<div *ngIf="loading">
+    <img height="125px" width="125px" src="img/loading1.gif" style="position: absolute; left: 40%; margin-top: 20%;">
+</div>
+
+<div *ngIf="!loading">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header" data-background-color="purple">
+                <h4 class="title">{{descripcion}}</h4>
+                <p class="category">Etapa Vida Niño</p>
+            </div>
+            <div class="card-content table-responsive">
+                <grid name="person grid" [rows]="reporte" [columns]="columns"></grid>
+            </div>
+        </div>
+    </div>
+</div>

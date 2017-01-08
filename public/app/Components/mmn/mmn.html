@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="col-xs-2" style=" height:100%;  
+    box-shadow: 0 12px 20px -10px rgba(16, 174, 222, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2);
+">
+        <p class="text-center"><strong>Multimicronutrientes</strong></p>
+        <br>
+        <p class="text-center text-primary">Años</p>
+        <p class="text-center">
+            <!--<select class="selectpicker" (change)="onChangeAnio($event.target.value)">-->
+            <select (change)="anio=($event.target.value)">
+    <option>2015</option>
+    <option selected="selected">2016</option>
+
+  </select>
+        </p>
+        <p class="text-center text-primary">Edad</p>
+        <p class="text-center">
+            <!--<select class="selectpicker" (change)="onChangeMes($event.target.value)">-->
+            <select (change)="edad=($event.target.value)">
+      <option value="101">Menor 1 año</option>
+      <option value="102">Menor 2 años</option>
+      <option value="103">Menor 3 años</option>
+      <option value="104">Menor 4 años</option>
+      <option value="105" selected="selected">Menor 5 años</option>
+      <option value="106">Menor 6 años</option>
+    </select>
+        </p>
+        <p class="text-center text-primary">Establecimiento</p>
+        <p class="text-center">
+            <!--<select class="selectpicker" (change)="onChangeMes($event.target.value)">-->
+            <select (change)="estab=($event.target.value)">
+            <option value="00000">Red Salud Ilo</option>
+            <option value="000002818" selected="selected">HOSP. ILO</option>
+            <option value="000002819">C.S. ALTO ILO</option>
+            <option value="000012046">C.S. JHON F. KENNEDY</option>
+            <option value="000002817">C.S. MIRAMAR</option>
+            <option value="000002820">C.S. PAMPA INALAMBRICA</option>
+            <option value="000002822">P.S. 18 DE MAYO</option>
+            <option value="000002816">P.S. EL ALGARROBAL</option>
+            <option value="000007731">P.S. LOS ANGELES</option>
+            <option value="000006777">P.S. PACOCHA</option>
+            <option value="000002821">P.S. VARADERO</option>
+        </select>
+        </p>
+        <p class="text-center text-primary">Buscar DNI</p>
+        <p class="text-center">
+            <input type="text" name="dni" id="dni" value="" (change)="dni=($event.target.value)">
+        </p>
+        <p class="text-center text-primary">Acciones:</p>
+        <p class="text-center">
+            <button class="btn btn-success" (click)="hacerConsulta()">Generar Reporte</button>
+            <br><br>
+            <button class="btn btn-warning" (click)="ExportarXLS()">Exportar a CSV</button>
+
+        </p>
+
+    </div>
+
+    <div class="col-xs-10">
+
+        <grid-demo3 [IdReport]="IdMes" [IdAnio]="IdAnio" [IdEstab]="IdEstab" [IdDNI]="IdDNI" [exportar]="exportar"></grid-demo3>
+
+    </div>
+
+</div>
